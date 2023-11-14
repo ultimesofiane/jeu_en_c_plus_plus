@@ -65,7 +65,7 @@ string Personnage::getName()  {
     return name;
 }
 
-// void Personnage::addStatsToDatabase() {
+void Personnage::addStatsToDatabase() {
 
 
 //        // Construction de la requête SQL
@@ -78,7 +78,7 @@ string Personnage::getName()  {
 //         if (result != SQLITE_OK) {
 //             cerr << "Erreur lors de l'ajout des statistiques à la base de données." <<endl;
 //         }
-//     }
+    }
 
 void Personnage::information(){
 cout<<"Nom : "<<name<<endl;
