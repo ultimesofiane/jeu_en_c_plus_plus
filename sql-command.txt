@@ -1,0 +1,43 @@
+
+--------------------- mysql commande line for installation ---------------------
+
+sudo apt install default-libmysqlclient-dev
+
+sudo apt install default-libmysqld-dev
+
+sudo apt install default-mysql-client
+
+sudo apt install default-mysql-client-core
+
+sudo apt install default-mysql-server
+
+sudo apt install default-mysql-server-core
+
+sudo apt install mysql-common
+
+--------------------- mysql start ---------------------
+
+service mysql start
+
+ mysql -u root  //sudo maybe necessaire
+ mysql -u username  //if account already been created
+
+--------------------- user & database creation --------------------
+ 
+create user sofiane;
+select  user from mysql.user;
+
+GRANT all PRIVILEGES ON *.* TO sofiane;
+
+FLUSH PRIVILEGES;
+
+create database cardgame;
+show databases;
+use cardgame;
+
+create table equipement(id MEDIUMINT NOT NULL AUTO_INCREMENT, name varCHAR(100) , attaque int , defense int, vitesse int, pv int, PRIMARY KEY (id));
+insert into equipement (name, attaque, defense, vitesse, pv) values ("gants en metal rouille", 50,0,0,0);
+select * from equipement;
+
+---------------------  terminale commande ---------------------
+g++ test-sql.cpp -o test -lmysqlclient && ./test
